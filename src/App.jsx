@@ -1,26 +1,20 @@
-function HeadFunction() {
+import {Heading} from './Gallery.jsx'
+import {Photo} from './Gallery.jsx'
+import {PhotoDetails} from './Gallery.jsx'
 
-  return (
-    <>
-      <h1>This is the headings!</h1>
-      <h2> This is second heading </h2>
-      <img src = "https://i.imgur.com/MK3eW3Am.jpg" ></img>
-    </>
-  );
-}
 
-function BodyFunction() {
 
+function App() {
   return (
     <section>
-      <HeadFunction/>
-      <HeadFunction/>
-      <HeadFunction/>
-      <HeadFunction/>
+        <PhotoDetails/>
+        <PhotoDetails/>
+        <PhotoDetails/>
+        <PhotoDetails/>
 
-      <h2> This is a body of webpage </h2>
     </section>
-  );
+
+  )
 }
 
-export default BodyFunction;
+export default App;
