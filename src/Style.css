@@ -1,0 +1,17 @@
+.Heading{
+    color: red;
+    font-weight: 900 ;
+    padding-left: 40%;
+}
+
+.box{
+    background-color: rgb(93, 132, 126);
+    font-weight: 900;
+    padding: 1% 2% 4% 2%;
+    margin-right: 2%;
+    flex: 1%;
+    font-size: 20px;
+    
+    color: rgb(255, 255, 255);
+    border-radius: 18px;
+}

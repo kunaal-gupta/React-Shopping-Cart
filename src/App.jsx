@@ -1,20 +1,40 @@
-import {Heading} from './Gallery.jsx'
-import {Photo} from './Gallery.jsx'
-import {PhotoDetails} from './Gallery.jsx'
+import './Style.css'
 
+const Product = {
 
+  
+}
 
-function App() {
+export function Boxes() {
   return (
-    <section>
-        <PhotoDetails/>
-        <PhotoDetails/>
-        <PhotoDetails/>
-        <PhotoDetails/>
+    <div className='box'> 
+      <p>j</p>
+      <p>Name: {} </p>
+      <p>Price: {} </p>
+    </div>
+  );
+}
 
-    </section>
-
+export function BoxesList() {
+  return (
+    <div style={{display: 'flex', marginBottom: '2%'}}>
+      <Boxes />
+      <Boxes />
+      <Boxes />
+      <Boxes />
+      <Boxes />
+    </div>
   )
 }
 
-export default App;
+export function MyButton() {
+
+  return (
+    <div>
+      <h1 className="Heading"> Welcome to my React app </h1>
+      <BoxesList/>
+      <BoxesList/>
+      <BoxesList/>
+    </div>
+  );
+}
