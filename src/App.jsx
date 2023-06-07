@@ -4,7 +4,7 @@ import { useState } from 'react';
 const Products = [
   { id: 0, name: 'Table', Price: 203, src: '', count: 0 },
   { id: 1, name: 'Chair', Price: 40, src: '', count: 0 },
-  { id: 2, name: 'Television', Price: 60, src: '', count: 0 },
+  { id: 2, name: 'WI-Fi', Price: 60, src: '', count: 0 },
   { id: 3, name: 'Mobile', Price: 240, src: '', count: 0 },
   { id: 4, name: 'Ladder', Price: 203, src: '', count: 0 },
   { id: 5, name: 'Ball', Price: 40, src: '', count: 0 },
@@ -18,31 +18,50 @@ const Products = [
 ];
 
 
-
 export function Boxes() {
-  const [count, setCount] = useState(0);
+  const [currProducts, setProducts] = useState(Products);
 
   function Add(id) {
-    
-    setCount(count + 1);
+    setProducts(prevProducts => {
+      return prevProducts.map(product => {
+        if (product.id === id) {
+          return {
+            ...product,
+            count: product.count + 1
+          };
+        }
+        else return product;
+      });
+    })
   }
+
 
   function Delete(id) {
-    setCount(count - 1);
-  }
+    setProducts(prevProduct => {
+      return prevProduct.map(product => {
+        if (product.id === id && product.count >0) {
+          return {
+            ...product,
+          count: product.count - 1
+        };
+      }
+      else return product;
+    });
+  })
+}
 
-  const Inventory = Products.map(Product => 
-    
-      <li className='box' key={Product.id} style={{display: 'inline-block', marginBottom: '1%'}}>
-        <p>Name: {Product.name} </p>
-        <p>Price: {Product.Price} </p>
-        
-        <div style={{display: 'flex'}}> 
-          <button className='button' onClick={() => Add(Product.id)}> + </button>  {Product.count} in the cart
-          <button className='button' onClick={() => Delete(Product.id)}> - </button>
-        </div>
-      </li>
-  );  
+  const Inventory = currProducts.map(Product =>
+
+    <li className='box' key={Product.id} style={{ display: 'inline-block', marginBottom: '1%' }}>
+      <p>Name: {Product.name} </p>
+      <p>Price: {Product.Price} </p>
+
+      <div style={{ display: 'flex' }}>
+        <button className='button' onClick={() => Add(Product.id)}> + </button>  {Product.count} in the cart
+        <button className='button' onClick={() => Delete(Product.id)}> - </button>
+      </div>
+    </li>
+  );
 
   return (<ul>{Inventory} </ul>);
 
