@@ -18,14 +18,15 @@
 }
 
 .button {
-
-    /* border-radius: 100%;
-    padding: 5%;
-    width: 25%; */
     font-size: 20px;
-    font-weight: bold;
- 
-}
+    padding: 3%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
 
 .button:hover {
     background-color: blue;

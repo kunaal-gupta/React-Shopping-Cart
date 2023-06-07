@@ -1,5 +1,9 @@
 import './Style.css'
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Products = [
   { id: 0, name: 'Table', Price: 203, src: '', count: 0 },
@@ -53,13 +57,18 @@ export function Boxes() {
   const Inventory = currProducts.map(Product =>
 
     <li className='box' key={Product.id} style={{ display: 'inline-block', marginBottom: '1%' }}>
-      <p>Name: {Product.name} </p>
-      <p>Price: {Product.Price} </p>
+      <p>
+        Name: {Product.name} <br />
+        Price: {Product.Price} 
+      </p>
 
-      <div style={{ display: 'flex' }}>
-        <button className='button' onClick={() => Add(Product.id)}> + </button>  {Product.count} in the cart
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button className='button' onClick={() => Add(Product.id)}> + </button>  
+        <FontAwesomeIcon icon={faShoppingCart} />
         <button className='button' onClick={() => Delete(Product.id)}> - </button>
-      </div>
+      </div><br/>
+
+      {Product.count} in the cart
     </li>
   );
 
@@ -69,7 +78,7 @@ export function Boxes() {
 
 export function BoxesList() {
   return (
-    <div style={{ marginBottom: '1%' }}>
+    <div style={{ marginBottom: '1%', display: 'flex', justifyContent: 'center' }}>
       <Boxes />
     </div>
   )
