@@ -21,15 +21,16 @@ const Products = [
 
 ];
 
-
 export function Boxes() {
   const [currProducts, setProducts] = useState(Products);
 
   function Add(id) {
     setProducts(prevProducts => {
       return prevProducts.map(product => {
+
         if (product.id === id) {
-          return {
+ 
+           return {
             ...product,
             count: product.count + 1
           };
@@ -39,14 +40,15 @@ export function Boxes() {
     })
   }
 
-
   function Delete(id) {
     setProducts(prevProduct => {
       return prevProduct.map(product => {
         if (product.id === id && product.count >0) {
           return {
             ...product,
-          count: product.count - 1
+          count: product.count - 1,
+          
+
         };
       }
       else return product;
@@ -64,7 +66,7 @@ export function Boxes() {
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button className='button' onClick={() => Add(Product.id)}> + </button>  
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <FontAwesomeIcon icon={faShoppingCart} style={{}}/>
         <button className='button' onClick={() => Delete(Product.id)}> - </button>
       </div><br/>
 
@@ -85,12 +87,15 @@ export function BoxesList() {
 }
 
 
-export function MyButton() {
 
+
+
+export function MyButton() {
   return (
     <div>
       <h1 className="Heading"> Welcome to my React app </h1> <br />
       <BoxesList />
+ 
     </div>
   );
 }
