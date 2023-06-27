@@ -31,3 +31,20 @@
 .button:hover {
     background-color: blue;
 }
+
+.HomepageButton {
+    margin-left: 40%;
+    border-radius: 25px;
+    color: white;
+    background-color: greY;
+    font-size: 150%;
+    padding: 1% 2% 1% 2%;
+}
+
+.HomepageButton:hover {
+    background-color: burlywood;
+    cursor:grab;
+    transform: scale(1.2);
+    font-weight: bold;
+
+}

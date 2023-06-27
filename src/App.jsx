@@ -88,15 +88,33 @@ export function BoxesList() {
 
 
 
+export function Homepage() {
+  function hideHomepage () {
+    document.getElementById('welcomepage').style.display = 'none'
+    document.getElementById('shoppingPage').style.display = 'block'
 
+  }
 
+  return (
+      <div id='welcomepage'>        
+          <h1 style={{fontSize: '320%', marginLeft: '25%', marginTop: '20%'}}> Welcome to React Shopping Cart </h1> <br />
+          <button className= 'HomepageButton' onClick={hideHomepage}> Start Shopping </button>
+      </div>
+  );
+}
+
+3
 export function MyButton() {
   return (
-    <div>
-      <h1 className="Heading"> Welcome to my React app </h1> <br />
-      <BoxesList />
- 
-    </div>
+    <>
+      <Homepage />
+
+      <div id = 'shoppingPage' style={{display: 'none'}}>
+        <h1 className="Heading"> Welcome to my React app </h1> <br />
+        <BoxesList />
+  
+      </div>
+    </>
   );
 }
 
