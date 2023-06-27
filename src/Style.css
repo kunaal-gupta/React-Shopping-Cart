@@ -5,17 +5,25 @@
 }
 
 .box{
-    background-color: rgb(93, 132, 126);
+    background-color: rgba(136, 138, 139, 0.272);
     font-weight: 900;
     padding: 1% 2% 4% 2%;
-    margin-right: 1%;
+    margin: 1%;
     flex: 1%;
     font-size: 20px;
     width: 10%;
+    display: inline-block;
     
-    color: rgb(255, 255, 255);
+    color: rgb(6, 6, 6);
     border-radius: 18px;
 }
+
+.box:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
 
 .button {
     font-size: 20px;
@@ -48,3 +56,27 @@
     font-weight: bold;
 
 }
+
+
+.loader {
+    border: 10px solid #f3f3f3; /* Light gray border */
+    border-top: 8px solid #138dde; /* Blue border on top */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 45%;
+    margin-top: 2%;
+    display: none;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { 
+        transform: rotate(360deg);
+        border-top: 8px solid red; }
+  }

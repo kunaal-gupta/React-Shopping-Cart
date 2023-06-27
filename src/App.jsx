@@ -58,7 +58,7 @@ export function Boxes() {
 
   const Inventory = currProducts.map(Product =>
 
-    <li className='box' key={Product.id} style={{ display: 'inline-block', marginBottom: '1%' }}>
+    <li className='box' key={Product.id} >
       <p>
         Name: {Product.name} <br />
         Price: {Product.Price} 
@@ -90,21 +90,32 @@ export function BoxesList() {
 
 export function Homepage() {
   function hideHomepage () {
-    document.getElementById('welcomepage').style.display = 'none'
-    document.getElementById('shoppingPage').style.display = 'block'
+
+    document.getElementById('loader').style.display = 'block';
+    setTimeout(() =>
+    {
+      document.getElementById('welcomepage').style.display = 'none';
+      document.getElementById('shoppingPage').style.display = 'block'
+
+
+    }, 1000)
+
+
 
   }
 
   return (
       <div id='welcomepage'>        
           <h1 style={{fontSize: '320%', marginLeft: '25%', marginTop: '20%'}}> Welcome to React Shopping Cart </h1> <br />
-          <button className= 'HomepageButton' onClick={hideHomepage}> Start Shopping </button>
+          <button className= 'HomepageButton' id='HomepageButton' onClick={hideHomepage}> Start Shopping </button>
+          <div className='loader' id='loader'>
+          </div>
       </div>
   );
 }
 
 3
-export function MyButton() {
+export function ReactShop() {
   return (
     <>
       <Homepage />
