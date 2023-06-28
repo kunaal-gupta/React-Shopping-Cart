@@ -65,9 +65,9 @@ export function Boxes() {
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button className='button' onClick={() => Add(Product.id)}> + </button>  
+        <button className='Add_Del_button' onClick={() => Add(Product.id)}> + </button>  
         <FontAwesomeIcon icon={faShoppingCart} style={{}}/>
-        <button className='button' onClick={() => Delete(Product.id)}> - </button>
+        <button className='Add_Del_button' onClick={() => Delete(Product.id)}> - </button>
       </div><br/>
 
       {Product.count} in the cart
