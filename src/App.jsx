@@ -58,20 +58,21 @@ export function Boxes() {
 
   const Inventory = currProducts.map(Product =>
 
-    <li className='box' key={Product.id} >
-      <p>
-        Name: {Product.name} <br />
-        Price: {Product.Price} 
-      </p>
+    <li className='box' id = 'box' key={Product.id} >
+      <p id='prodHeading'> 
+        Name: {Product.name} <br/>
+        Price: ${Product.Price}  </p>
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button className='Add_Del_button' onClick={() => Add(Product.id)}> + </button>  
-        <FontAwesomeIcon icon={faShoppingCart} style={{}}/>
+        <FontAwesomeIcon icon={faShoppingCart} style={{marginTop: '3%'}}/>
         <button className='Add_Del_button' onClick={() => Delete(Product.id)}> - </button>
       </div><br/>
 
       {Product.count} in the cart
+
     </li>
+    
   );
 
   return (<ul>{Inventory} </ul>);
@@ -98,7 +99,7 @@ export function Homepage() {
       document.getElementById('shoppingPage').style.display = 'block'
 
 
-    }, 1000)
+    },2000)
 
 
 
@@ -106,7 +107,7 @@ export function Homepage() {
 
   return (
       <div id='welcomepage'>        
-          <h1 style={{fontSize: '320%', marginLeft: '25%', marginTop: '20%'}}> Welcome to React Shopping Cart </h1> <br />
+          <h1 style={{fontSize: '320%', marginLeft: '25%', marginTop: '20%', fontFamily: 'Calibri'}}> Welcome to React Shopping Cart </h1> <br />
           <button className= 'HomepageButton' id='HomepageButton' onClick={hideHomepage}> Start Shopping </button>
           <div className='loader' id='loader'>
           </div>
@@ -121,10 +122,14 @@ export function ReactShop() {
       <Homepage />
 
       <div id = 'shoppingPage' style={{display: 'none'}}>
-        <h1 className="Heading"> Welcome to my React app </h1> <br />
+        <h1 className="Heading"> Welcome to my React Shopping app </h1> <br />
         <BoxesList />
   
       </div>
+      {/* <ul> {Products.map((e) => {
+        return <li key={e.id}> {e.name}  {e.count} </li>
+      })}
+      </ul> */}
     </>
   );
 }

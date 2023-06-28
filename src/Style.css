@@ -1,7 +1,20 @@
 .Heading{
-    color: red;
-    font-weight: 900 ;
-    padding-left: 40%;
+    color: rgb(14, 2, 9);
+    /* background-color: rgb(15, 144, 137); */
+    border-radius: 25px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    text-align: center;
+    font-weight: 900;
+    font-family: Calibri;
+    /* margin-left: 20%; */
+}
+
+#prodHeading{
+    color: rgb(49, 41, 41);
+    font-weight: 950;
+    /* margin-bottom: 1%; */
 }
 
 .box{
@@ -13,14 +26,19 @@
     font-size: 20px;
     width: 10%;
     display: inline-block;
+    font-family: Calibri;
     
-    color: rgb(6, 6, 6);
     border-radius: 18px;
+    color: #138dde;
+    
 }
 
 .box:hover{
-    transform: scale(1.1);
+    transform: scale(1.15);
     cursor: pointer;
+    color: white;
+    background-color: #138dde;
+
 }
 
 
@@ -54,18 +72,24 @@
 }
 
 .HomepageButton:hover {
-    background-color: burlywood;
+    /* background-color: burlywood; */
     cursor:grab;
     transform: scale(1.2);
     font-weight: bold;
+    border-width: 4px;
+    background-color: #138dde;
+    border-color: white;
 
 }
 
 
 .loader {
-    border: 10px solid #f3f3f3; /* Light gray border */
+    border: 10px solid #f3f3f3; 
     border-top: 8px solid #138dde; /* Blue border on top */
-    border-radius: 50%;
+    border-right: 8px solid #138dde; /* Blue border on top */
+
+
+    /* border-radius: 100%; */
     width: 60px;
     height: 60px;
     margin-left: 45%;
@@ -75,12 +99,18 @@
     animation-name: spin;
     animation-duration: 1s;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
     
 }
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { 
-        transform: rotate(360deg);
-        border-top: 8px solid red; }
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180de);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
