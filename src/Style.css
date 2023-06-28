@@ -1,23 +1,20 @@
-.Heading{
+.ShoppingPageHeading{
     color: rgb(14, 2, 9);
-    /* background-color: rgb(15, 144, 137); */
     border-radius: 25px;
     padding-top: 1%;
     padding-bottom: 1%;
 
     text-align: center;
-    font-weight: 900;
+    font-size: 250%;
     font-family: Calibri;
-    /* margin-left: 20%; */
 }
 
-#prodHeading{
+#productDesc{
     color: rgb(49, 41, 41);
     font-weight: 950;
-    /* margin-bottom: 1%; */
 }
 
-.box{
+.productBox{
     background-color: rgba(136, 138, 139, 0.272);
     font-weight: 900;
     padding: 1% 2% 4% 2%;
@@ -33,7 +30,7 @@
     
 }
 
-.box:hover{
+.productBox:hover{
     transform: scale(1.15);
     cursor: pointer;
     color: white;
@@ -43,7 +40,7 @@
 
 
 
-.Add_Del_button {
+.Add-DelButton {
     font-size: 100%;
     padding: 10%;
     height: 20px;
@@ -56,7 +53,7 @@
 
   }
 
-.Add_Del_button:hover {
+.Add-DelButton:hover {
     background-color: rgb(144, 148, 160);
     cursor: pointer;
     transform: scale(1.3);
@@ -89,7 +86,7 @@
     border-right: 8px solid #138dde; /* Blue border on top */
 
 
-    /* border-radius: 100%; */
+    border-radius: 100%;
     width: 60px;
     height: 60px;
     margin-left: 45%;
