@@ -238,8 +238,8 @@ font-weight: bold;
 
 .loader {
     border: 10px solid #f3f3f3; 
-    border-top: 8px solid #de1313; 
-    border-right: 8px solid #138dde; 
+    border-top: 8px dashed #de1313; 
+    border-right: 8px dashed #138dde; 
 
 
     border-radius: 100%;

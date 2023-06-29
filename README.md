@@ -3,6 +3,8 @@
 
 A shopping application developed using React & Vite which allows customer to add variety of products into their cart and provide a e-bill for lookup at checkout section.
 
+![alt text](./src/)
+
 
 ## Run Locally
 
@@ -27,7 +29,7 @@ Start the server
 
 ## Authors
 
-- [@Kunaal Gupta](https://github.com/kunaal-gupta)
+- [@Kunaal Gupta](./src/ReactShoppingCentre.png)
 
 
 ## Tech Stack
