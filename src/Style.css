@@ -79,9 +79,43 @@
     margin-left: 40%;
     border-radius: 25px;
     color: white;
-    background-color: greY;
+    background-color: #138dde;
     font-size: 150%;
     padding: 1% 2% 1% 2%;
+    border-color: #f3f3f3;
+
+}
+
+.CheckoutPage{
+    margin-top: 3%;
+    margin-left: 28%;
+    border-radius: 18px;
+    width: 40%;
+    
+    font-family: Calibri;
+    background-color: #138dde; 
+
+}
+
+.Heading-checkoutpage{
+    padding-top: 2%;
+    margin-left: 30%;
+    font-size: 200%;
+    font-family: Calibri;
+
+
+}
+
+.Items-checkoutpage{
+    margin-left: 10%;
+    margin-bottom: 10%;
+    font-size: 150%;
+
+} 
+
+.billing-checkoutpage{
+    margin-left: 70%;
+    font-size: 150%;
 }
 
 .HomepageButton:hover {

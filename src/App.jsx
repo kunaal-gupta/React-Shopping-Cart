@@ -4,10 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { LoadHomepage } from './Homepage';
 import { useEffect } from 'react';
-import { element } from 'prop-types';
-
-
-
 
 const Products = [
   { id: 0, name: 'Table', Price: 203, src: '', count: 0 },
@@ -29,20 +25,28 @@ const Products = [
 export function ReactShop() {
   const [currProducts, setProducts] = useState(Products);
 
+  let totalPrice = 0;
+  let totalTax = 0;
+  let Total = totalPrice + totalTax;
 
-   function CreateProduct() {
-  
+  currProducts.forEach(element => {
+    totalPrice += element.Price * element.count;
+
+  });
+
+  function CreateProduct() {
+
     useEffect(() => {
       console.log(currProducts);
     });
-  
+
     const Inventory = currProducts.map(Product =>
-  
+
       <li className='productBox' id='productBox' key={Product.id} >
         <p id='prodHeading'>
           Name: {Product.name} <br />
           Price: $ {Product.Price}  </p>
-  
+
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <button className='Add-DelButton' onClick={() =>
             setProducts(currProducts.map((a) => {
@@ -52,28 +56,50 @@ export function ReactShop() {
               return a;
             }
             ))
-  
+
           }> + </button>
-  
-  
+
+
           <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
           <button className='Add-DelButton' onClick={() => DeleteProduct(Product.id)}> - </button>
         </div><br />
-  
-  
+
+
         {Product.count} in the cart
-  
+
       </li>);
-  
+
     return (<ul>{Inventory} </ul>);
-  
+
   }
 
-  let totalPrice = 0;
-  currProducts.forEach(element => {
-    totalPrice += element.Price * element.count; 
+  function HideShoppingPage() {
+    document.getElementById('ShoppingPage').style.display = 'none'
+    document.getElementById('CheckoutPage').style.display = 'block'
 
-  });
+  }
+
+  function LoadCheckoutPage() {
+
+    return (
+      <div className="CheckoutPage">
+        <p className="Heading-checkoutpage"> Review your Order</p>
+        <hr />
+        <p className="Items-checkoutpage"> Items:</p>
+        <hr />
+
+
+        <p className="billing-checkoutpage">
+          SubTotal: {totalPrice}  <br></br>
+          Taxes:    {totalTax}    <br></br>
+          Total:    {Total}       <br></br>
+
+        </p>
+
+      </div>
+    )
+  }
+
 
   return (
     <>
@@ -82,17 +108,18 @@ export function ReactShop() {
       <div id='ShoppingPage' style={{ display: 'none' }}>
 
         <h1 className="ShoppingPageHeading"> Welcome to my React Shop </h1> <br />
-
         <div style={{ marginBottom: '1%', display: 'flex', justifyContent: 'center' }}>
           <CreateProduct />
         </div>
-
-        <button className='CheckoutButton'>Proceed to Checkout</button>
-        <div>
-          <h3>Price: {totalPrice}</h3>
-        </div>
+        <button className='CheckoutButton' onClick={HideShoppingPage}>Proceed to Checkout</button>
 
       </div>
+
+      <div id='CheckoutPage' style={{ display: 'none' }}>
+        <LoadCheckoutPage style={{ display: 'none' }} />
+      </div>
+
+
     </>
   );
 }

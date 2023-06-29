@@ -6,7 +6,7 @@ export function LoadHomepage() {
       setTimeout(() =>
       {
         document.getElementById('WelcomePage').style.display = 'none';
-        document.getElementById('ShoppingPage').style.display = 'block'
+        document.getElementById('ShoppingPage').style.display = 'block';
   
       },2000)
   
