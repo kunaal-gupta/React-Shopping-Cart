@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { LoadHomepage } from './Homepage';
+import { useEffect } from 'react';
+
 
 
 
@@ -24,6 +26,12 @@ const Products = [
 
 export function CreateProduct() {
   const [currProducts, setProducts] = useState(Products);
+
+  useEffect(() => {
+    console.log(currProducts);
+  });
+
+
 
   function AddProduct(id) {
     setProducts(prevProducts => {
@@ -60,13 +68,25 @@ export function CreateProduct() {
     <li className='productBox' id='productBox' key={Product.id} >
       <p id='prodHeading'>
         Name: {Product.name} <br />
-        Price: ${Product.Price}  </p>
+        Price: $ {Product.Price}  </p>
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button className='Add-DelButton' onClick={() => AddProduct(Product.id)}> + </button>
+        <button className='Add-DelButton' onClick={() =>
+          setProducts(currProducts.map((a) => {
+            if (a.id == Product.id) {
+              return { ...a, count: a.count + 1 }
+            }
+            return a;
+          }
+          ))
+
+        }> + </button>
+
+
         <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
         <button className='Add-DelButton' onClick={() => DeleteProduct(Product.id)}> - </button>
       </div><br />
+
 
       {Product.count} in the cart
 
@@ -78,6 +98,10 @@ export function CreateProduct() {
 
 
 export function ReactShop() {
+  function a ()
+  {
+    console.log(Products)
+  }
   return (
     <>
       <LoadHomepage />
@@ -89,6 +113,13 @@ export function ReactShop() {
         <div style={{ marginBottom: '1%', display: 'flex', justifyContent: 'center' }}>
           <CreateProduct />
         </div>
+
+        <button onClick={ a}>Click Me</button>
+
+        <ul> {Products.map((e) => {
+          return <li key={e.id}> {e.name}  {e.count} </li>
+        })}
+        </ul>
 
       </div>
     </>
