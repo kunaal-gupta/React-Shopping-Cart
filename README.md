@@ -5,6 +5,8 @@ A shopping application developed using React & Vite which allows customer to add
 
 ![React Homepage](/src/Image/ReactHomepage.png)
 ![React Dashboard](/src/Image/ReactShoppingCentre.png)
+![React Bill](/src/Image/ReactBill.png)
+
 
 
 ## Run Locally
