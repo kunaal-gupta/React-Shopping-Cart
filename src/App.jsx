@@ -77,54 +77,71 @@ export function ReactShop() {
   }
 
   function HideShoppingPage() {
-    document.getElementById('ShoppingPage').style.display = 'none'
-    document.getElementById('CheckoutPage').style.display = 'block'
+    document.getElementById('ShoppingPage').style.display = 'none';
+    document.getElementById('CheckoutPage').style.display = 'block';
+
+  }
+
+  function CalculateBill() {
+    document.getElementById('Calc-checkoutpage').style.display = 'none';
+    document.getElementById('cloader').style.display = 'block';
+
+    setTimeout(() => {
+      document.getElementById('cloader').style.display = 'none';
+      document.getElementById('billing-checkoutpage').style.display = 'block';
+    }, 2000
+    )
+
 
   }
 
   function LoadCheckoutPage() {
 
     return (
-      <div className="CheckoutPage">
-        <div className="Heading-checkoutpage"> Review your Order</div><hr />
-        <div>
+      <>
+        <div className="CheckoutPage">
+          <div className="Heading-checkoutpage"> Review your Order</div><hr />
+          <div>
+            <table style={{ border: '1px solid black', width: '100%' }}>
+              <thead>
+                <tr >
+                  <th className='table-Pcount' style={{ backgroundColor: 'rgb(230, 205, 205)' }}>Count</th>
+                  <th className='table-Pname' style={{ backgroundColor: 'rgb(230, 205, 205)' }}>Name</th>
+                  <th className='table-Pprice' style={{ backgroundColor: 'rgb(230, 205, 205)' }}>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  currProducts.map((element) => {
+                    if (element.count != 0) {
+                      return (
+                        <tr key={element.id}>
+                          <td className='table-Pcount'>  x{element.count}</td>
+                          <td className='table-Pname'>    {element.name} </td>
+                          <td className='table-Pprice'>  ${element.Price}</td>
+                        </tr>
+                      )
+                    }
+                  }
+                  )}
 
-          <table style={{border: '1px solid black', width: '100%'}}>
-            <thead>
-              <tr >
-                <th className='table-Pcount' style={{backgroundColor: 'rgb(230, 205, 205)'}}>Count</th>
-                <th className='table-Pname'  style={{backgroundColor: 'rgb(230, 205, 205)'}}>Name</th>
-                <th className='table-Pprice' style={{backgroundColor: 'rgb(230, 205, 205)'}}>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                currProducts.map((element) =>{
-                if (element.count !=0) {
-                  return(
-                  <tr key={element.id}>
-                    <td  className='table-Pcount'> X{element.count}</td>
-                    <td  className='table-Pname'>   {element.name} </td>
-                    <td  className='table-Pprice'>  ${element.Price}</td>
-                  </tr>
-                  )
-                }}
-                )}
+              </tbody>
+            </table>
+            <button id='Calc-checkoutpage' className='Calc-checkoutpage' onClick={CalculateBill}>Calculate </button>
+          </div>
 
-            </tbody>
-          </table>
+          <div className="billing-checkoutpage" id='billing-checkoutpage'>
+
+            SubTotal: {totalPrice}  <br></br>
+            Tax Rate:    20%       <br></br>
+            Taxes:    {totalTax}    <br></br>
+            Total:    {Total}       <br></br>
+
+          </div>
+
         </div>
-        <hr />
-
-        <div className="billing-checkoutpage">
-          SubTotal: {totalPrice}  <br></br>
-          Tax Rate:    20%       <br></br>
-          Taxes:    {totalTax}    <br></br>
-          Total:    {Total}       <br></br>
-
-        </div>
-
-      </div>
+        <div className='cloader' id='cloader'></div>
+      </>
     )
   }
 

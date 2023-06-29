@@ -92,7 +92,7 @@
     width: 40%;
     border: 5px solid rgb(148, 133, 127);
     height:fit-content;
-    padding: 1%;
+    padding: 1.5%;
     font-family: Calibri;
   }
   
@@ -104,7 +104,7 @@
     font-size: 200%;
     font-family: Calibri;
     background-color: gainsboro;
-    border-radius: 25px;
+    border-radius: 18px;
     font-weight: bold;
 }
 
@@ -133,13 +133,29 @@ th, td{
 
 }
 .table-Pprice{
-    text-align: center;
+    /* text-align: center; */
     word-wrap: break-word;
-    width: 20%
+    width: 20%;
+    padding-left: 20px;
+}
 
-
+.Calc-checkoutpage{
+    width: 100%;
+    padding: 2%;
+    cursor: pointer;
+    margin-top: 2%;
+    font-size: 150%;
+    font-weight: bold;
+    border-radius: 18px;
+    border: 10px solid white;
+    
 
 }
+.Calc-checkoutpage:hover{
+
+transform: scale(1.05);
+}
+
 
 .Items-checkoutpage{
     margin-left: 10%;
@@ -151,6 +167,7 @@ th, td{
 .billing-checkoutpage{
     margin-left: 70%;
     font-size: 150%;
+    display: none;
 }
 
 .HomepageButton:hover {
@@ -166,6 +183,38 @@ th, td{
 
 
 .loader {
+    border: 10px solid #f3f3f3; 
+    border-top: 8px solid #138dde; /* Blue border on top */
+    border-right: 8px solid #138dde; /* Blue border on top */
+
+
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin-left: 45%;
+    margin-top: 2%;
+    display: none;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180de);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .cloader {
     border: 10px solid #f3f3f3; 
     border-top: 8px solid #138dde; /* Blue border on top */
     border-right: 8px solid #138dde; /* Blue border on top */
