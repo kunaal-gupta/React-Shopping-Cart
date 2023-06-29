@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { LoadHomepage } from './Homepage';
 import { useEffect } from 'react';
+import { element } from 'prop-types';
 
 
 
@@ -24,84 +25,56 @@ const Products = [
 
 ];
 
-export function CreateProduct() {
-  const [currProducts, setProducts] = useState(Products);
-
-  useEffect(() => {
-    console.log(currProducts);
-  });
-
-
-
-  function AddProduct(id) {
-    setProducts(prevProducts => {
-      return prevProducts.map(product => {
-
-        if (product.id === id) {
-
-          return {
-            ...product,
-            count: product.count + 1
-          };
-        }
-        else return product;
-      });
-    })
-  }
-
-  function DeleteProduct(id) {
-    setProducts(prevProduct => {
-      return prevProduct.map(product => {
-        if (product.id === id && product.count > 0) {
-          return {
-            ...product,
-            count: product.count - 1,
-          };
-        }
-        else return product;
-      });
-    })
-  }
-
-  const Inventory = currProducts.map(Product =>
-
-    <li className='productBox' id='productBox' key={Product.id} >
-      <p id='prodHeading'>
-        Name: {Product.name} <br />
-        Price: $ {Product.Price}  </p>
-
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button className='Add-DelButton' onClick={() =>
-          setProducts(currProducts.map((a) => {
-            if (a.id == Product.id) {
-              return { ...a, count: a.count + 1 }
-            }
-            return a;
-          }
-          ))
-
-        }> + </button>
-
-
-        <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
-        <button className='Add-DelButton' onClick={() => DeleteProduct(Product.id)}> - </button>
-      </div><br />
-
-
-      {Product.count} in the cart
-
-    </li>);
-
-  return (<ul>{Inventory} </ul>);
-
-}
-
 
 export function ReactShop() {
-  function a ()
-  {
-    console.log(Products)
+  const [currProducts, setProducts] = useState(Products);
+
+
+   function CreateProduct() {
+  
+    useEffect(() => {
+      console.log(currProducts);
+    });
+  
+    const Inventory = currProducts.map(Product =>
+  
+      <li className='productBox' id='productBox' key={Product.id} >
+        <p id='prodHeading'>
+          Name: {Product.name} <br />
+          Price: $ {Product.Price}  </p>
+  
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button className='Add-DelButton' onClick={() =>
+            setProducts(currProducts.map((a) => {
+              if (a.id == Product.id) {
+                return { ...a, count: a.count + 1 }
+              }
+              return a;
+            }
+            ))
+  
+          }> + </button>
+  
+  
+          <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
+          <button className='Add-DelButton' onClick={() => DeleteProduct(Product.id)}> - </button>
+        </div><br />
+  
+  
+        {Product.count} in the cart
+  
+      </li>);
+  
+    return (<ul>{Inventory} </ul>);
+  
   }
+
+  let totalPrice = 0;
+  currProducts.forEach(element => {
+    totalPrice += element.Price * element.count; 
+
+  });
+
   return (
     <>
       <LoadHomepage />
@@ -114,12 +87,10 @@ export function ReactShop() {
           <CreateProduct />
         </div>
 
-        <button onClick={ a}>Click Me</button>
-
-        <ul> {Products.map((e) => {
-          return <li key={e.id}> {e.name}  {e.count} </li>
-        })}
-        </ul>
+        <button className='CheckoutButton'>Proceed to Checkout</button>
+        <div>
+          <h3>Price: {totalPrice}</h3>
+        </div>
 
       </div>
     </>
