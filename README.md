@@ -29,7 +29,7 @@ Start the server
 
 ## Authors
 
-- [@Kunaal Gupta](./src/ReactShoppingCentre.png)
+- [@Kunaal Gupta](/src/ReactShoppingCentre.png)
 
 
 ## Tech Stack
