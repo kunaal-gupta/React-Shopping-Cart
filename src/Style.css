@@ -1,9 +1,10 @@
 .ShoppingPageHeading{
     color: rgb(14, 2, 9);
-    padding-top: 0.5%;
+    /* padding: 1%; */
     text-align: center;
     font-size: 250%;
     font-family: Calibri;
+    /* background-color: #f3f3f3; */
 }
 
 #productDesc{
@@ -15,8 +16,9 @@
     background-color: #138dde;
     padding: 1% 2% 1% 2%;
     border-radius: 18px;
-    font-size: 150%;
-    margin-left: 40%;
+    font-size: 180%;
+    margin-left: 30%;
+    width: 40%;
     font-family: Calibri;
     color: white;
     cursor:pointer;
@@ -31,7 +33,7 @@
 }
 
 .productBox{
-    background-color: rgba(136, 138, 139, 0.272);
+    background-color: rgba(236, 232, 226, 0.272);
     font-weight: 900;
     padding: 1% 2% 1% 2%;
     margin: 1%;
@@ -42,15 +44,32 @@
     font-family: Calibri;
     
     border-radius: 18px;
-    color: #138dde;
+    color: #000000;
     
 }
+
 
 .productBox:hover{
     transform: scale(1.15);
     cursor: pointer;
     color: white;
     background-color: #138dde;
+    border: #000000 1px solid;
+
+}
+
+.counter {
+    background-color: rgb(98, 155, 205);
+    color: #f1f1f1;
+    padding: 4% 5% 4% 5%;
+    border: #fbfbfb solid 2px;
+    border-radius: 18px;
+}
+
+.counter:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+    border: 1px solid white;
 
 }
 
@@ -66,21 +85,26 @@
     margin-left: 5%;
     margin-right: 5%;
     justify-content: center;
+    background-color: white;
+    border-radius: 50%;
 
   }
 
 .Add-DelButton:hover {
-    background-color: rgb(144, 148, 160);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
-    transform: scale(1.3);
+    transform: scale(1.4);
+    border: 1px solid white;
 }
 
 .HomepageButton {
-    margin-left: 40%;
+    margin-left: 38%;
     border-radius: 25px;
     color: white;
     background-color: #138dde;
-    font-size: 150%;
+    font-size: 160%;
+    font-weight: bold;
+    width: 20%;
     padding: 1% 2% 1% 2%;
     border-color: #f3f3f3;
 
@@ -88,6 +112,7 @@
 
 .CheckoutPage {
     margin-left: 28%;
+    margin-top: 2%;
     border-radius: 18px;
     width: 40%;
     border: 5px solid rgb(148, 133, 127);
@@ -103,7 +128,7 @@
     text-align: center;
     font-size: 200%;
     font-family: Calibri;
-    background-color: gainsboro;
+    background-color: rgb(255, 255, 255);
     border-radius: 18px;
     font-weight: bold;
 }
@@ -147,7 +172,6 @@
     font-family: Calibri;
     font-size: 150%;
     height: 1%;
-    /* text-align: center; */
     word-wrap: break-word;
     width: 20%;
     padding-left: 20px;
@@ -159,15 +183,20 @@
     cursor: pointer;
     margin-top: 2%;
     font-size: 150%;
-    font-weight: bold;
     border-radius: 18px;
     border: 10px solid white;
-    
+    background-color: #138dde;
+    color: white;
+    font-weight: bold;
 
 }
 .Calc-checkoutpage:hover{
 
 transform: scale(1.05);
+color: white;
+font-weight: bold;
+
+
 }
 
 
