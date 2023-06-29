@@ -6,18 +6,18 @@ import { LoadHomepage } from './Homepage';
 import { useEffect } from 'react';
 
 const Products = [
-  { id: 0, name: 'Table', Price: 203, src: '', count: 0 },
-  { id: 1, name: 'Chair', Price: 40, src: '', count: 0 },
-  { id: 2, name: 'WI-Fi', Price: 60, src: '', count: 0 },
-  { id: 3, name: 'Mobile', Price: 240, src: '', count: 0 },
-  { id: 4, name: 'Ladder', Price: 203, src: '', count: 0 },
-  { id: 5, name: 'Ball', Price: 40, src: '', count: 0 },
-  { id: 6, name: 'Car', Price: 60, src: '', count: 0 },
-  { id: 7, name: 'Truck', Price: 240, src: '', count: 0 },
-  { id: 8, name: 'Ball', Price: 40, src: '', count: 0 },
-  { id: 9, name: 'Car', Price: 60, src: '', count: 0 },
-  { id: 10, name: 'Truck', Price: 240, src: '', count: 0 },
-  { id: 11, name: 'Laptop', Price: 240, src: '', count: 0 }
+  { id: 0, name: 'Next.js', Price: 20, src: '', count: 0 },
+  { id: 1, name: 'Gatsby', Price: 450, src: '', count: 0 },
+  { id: 2, name: 'Redux', Price: 360, src: '', count: 0 },
+  { id: 3, name: 'Router', Price: 240, src: '', count: 0 },
+  { id: 4, name: 'Rebass', Price: 160, src: '', count: 0 },
+  { id: 5, name: 'FuseBox', Price: 177, src: '', count: 0 },
+  { id: 6, name: 'Vite', Price: 690, src: '', count: 0 },
+  { id: 7, name: 'Formik', Price: 340, src: '', count: 0 },
+  { id: 8, name: 'Chakra UI', Price: 140, src: '', count: 0 },
+  { id: 9, name: 'Recoil', Price: 260, src: '', count: 0 },
+  { id: 10, name: 'R.Native', Price: 154, src: '', count: 0 },
+  { id: 11, name: 'Razzle', Price: 70, src: '', count: 0 }
 
 ];
 
@@ -40,6 +40,8 @@ export function ReactShop() {
     const Inventory = currProducts.map(Product =>
 
       <li className='productBox' id='productBox' key={Product.id} >
+        <span className='counter'>{Product.count}</span>
+
         <p id='prodHeading'>
           <span style={{ color: 'black' }}>Name</span>: {Product.name} <br />
           <span style={{ color: 'black' }}>Price:</span> ${Product.Price}  </p>
@@ -57,7 +59,7 @@ export function ReactShop() {
           }> + </button>
 
 
-          <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
+          <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '0%' }} />
           <button className='Add-DelButton' id='DelButton' onClick={() =>
             setProducts(currProducts.map((a) => {
               if (a.id == Product.id && a.count >= 1) {
@@ -70,11 +72,10 @@ export function ReactShop() {
           }> - </button>        </div><br />
 
 
-        <span className='counter'>{Product.count}</span> in the cart
 
       </li>);
 
-    return (<ul>{Inventory} </ul>);
+    return (<ul className='Inv'>{Inventory} </ul>);
 
   }
 
@@ -167,7 +168,7 @@ export function ReactShop() {
       <LoadHomepage />
       <div id='ShoppingPage' style={{ display: 'none' }}>
 
-        <h1 className="ShoppingPageHeading"> Welcome to the React Shopping Centre</h1><hr style={{ width: "50%" }}></hr>
+        <h1 className="ShoppingPageHeading"> Welcome to Courses on React Frameworks</h1><hr style={{ width: "50%" }}></hr>
         <div style={{ marginBottom: '1%', display: 'flex', justifyContent: 'center' }}>
           <CreateProduct />
         </div>
