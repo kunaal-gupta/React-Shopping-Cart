@@ -1,9 +1,9 @@
 
 # React Shopping Centre
 
-A shopping application developed using React & Vite which allows customer to add variety of products into their cart and provide a e-bill for lookup at checkout section.
+A shopping application developed using React & Vite which allows customer to add variety of online courses on react framework into their cart and provide a e-bill for lookup on the checkout page.
 
-![alt text](./src/)
+![React Dashboard](/src/ReactShoppingCentre.png)
 
 
 ## Run Locally
