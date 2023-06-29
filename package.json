@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://kunaal-gupta.github.io/React-Shopping-Centre/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
