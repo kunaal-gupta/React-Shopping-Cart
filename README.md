@@ -3,6 +3,7 @@
 
 A shopping application developed using React & Vite which allows customer to add variety of online courses on react framework into their cart and provide a e-bill for lookup on the checkout page.
 
+![React Homepage](/src/Homepage.jsx)
 ![React Dashboard](/src/ReactShoppingCentre.png)
 
 
@@ -29,7 +30,7 @@ Start the server
 
 ## Authors
 
-- [@Kunaal Gupta](/src/ReactShoppingCentre.png)
+- [@Kunaal Gupta]
 
 
 ## Tech Stack
