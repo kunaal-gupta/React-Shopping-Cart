@@ -32,7 +32,7 @@ Start the server
 
 ## Authors
 
-- [@Kunaal Gupta]
+- @[Kunaal Gupta]('https://github.com/kunaal-gupta')
 
 
 ## Tech Stack
