@@ -32,7 +32,7 @@ export function ReactShop() {
 
   });
 
-  let totalTax = 0.2 * totalPrice;
+  let totalTax = 0.02 * totalPrice;
   let Total = totalPrice + totalTax;
 
   function CreateProduct() {
@@ -60,7 +60,7 @@ export function ReactShop() {
           <FontAwesomeIcon icon={faShoppingCart} style={{ marginTop: '3%' }} />
           <button className='Add-DelButton' id='DelButton' onClick={() =>
             setProducts(currProducts.map((a) => {
-              if (a.id == Product.id && a.count>=1) {
+              if (a.id == Product.id && a.count >= 1) {
                 return { ...a, count: a.count - 1 }
               }
               return a;
@@ -80,8 +80,15 @@ export function ReactShop() {
 
   function HideShoppingPage() {
     document.getElementById('ShoppingPage').style.display = 'none';
-    document.getElementById('CheckoutPage').style.display = 'block';
+    document.getElementById('sloader').style.display = 'block';
 
+    setTimeout(() => {
+      document.getElementById('sloader').style.display = 'none';
+
+      document.getElementById('ShoppingPage').style.display = 'none';
+      document.getElementById('CheckoutPage').style.display = 'block';
+    }, 500
+    )
   }
 
   function CalculateBill() {
@@ -102,12 +109,12 @@ export function ReactShop() {
     return (
       <>
         <div className="CheckoutPage">
-        <h1 style={{textAlign: 'center'}}> Thank you for shopping with us</h1><hr/><br></br>
-        
+          <h1 style={{ textAlign: 'center' }}> Thank you for shopping with us</h1><hr /><br></br>
+
 
           <div className="Heading-checkoutpage"> Review your Order</div>
           <div>
-            
+
             <table style={{ border: '1px solid black', width: '100%' }}>
               <thead>
                 <tr >
@@ -139,9 +146,9 @@ export function ReactShop() {
           <div className="billing-checkoutpage" id='billing-checkoutpage'>
             <br />
             <table style={{ fontSize: '100%' }}>
-              <tr> <td className='BillFinancesHead'> SubTotal:  </td> <td className='BillFinancesValue'>  ${totalPrice}   </td></tr>
-              <tr> <td className='BillFinancesHead'> Tax (20%): </td> <td className='BillFinancesValue'>  ${totalTax}     </td></tr><br></br>
-              <tr> <td style={{fontWeight:'9000', fontSize: '29px'}} className='BillFinancesHead'> Total:     </td> <td className='BillFinancesValue'>  ${Total}       </td></tr>
+              <tr> <td className='BillFinancesHead'> SubTotal:  </td> <td className='BillFinancesValue'>  ${totalPrice.toFixed(2)}   </td></tr>
+              <tr> <td className='BillFinancesHead'> Tax (2%): </td> <td className='BillFinancesValue'>  ${(totalTax).toFixed(2)}    </td></tr><br></br>
+              <tr> <td style={{ fontWeight: '9000', fontSize: '29px' }} className='BillFinancesHead'> Total:     </td> <td className='BillFinancesValue'>  ${Total.toFixed(2)}       </td></tr>
 
             </table>
           </div >
@@ -158,15 +165,18 @@ export function ReactShop() {
   return (
     <>
       <LoadHomepage />
-      <div id='ShoppingPage' style={{ display: 'none'}}>
+      <div id='ShoppingPage' style={{ display: 'none' }}>
 
-        <h1 className="ShoppingPageHeading"> Welcome to the React Shopping Centre</h1><hr style={{width:"50%"}}></hr>
+        <h1 className="ShoppingPageHeading"> Welcome to the React Shopping Centre</h1><hr style={{ width: "50%" }}></hr>
         <div style={{ marginBottom: '1%', display: 'flex', justifyContent: 'center' }}>
           <CreateProduct />
         </div>
+
         <button className='CheckoutButton' onClick={HideShoppingPage}>Proceed to Checkout</button>
 
       </div>
+      <div className='sloader' id='sloader'></div>
+
 
       <div id='CheckoutPage' style={{ display: 'none' }}>
         <LoadCheckoutPage />

@@ -289,3 +289,36 @@ font-weight: bold;
       transform: rotate(360deg);
     }
   }
+
+
+  .sloader {
+    border: 10px solid #f3f3f3; 
+    border-top: 8px solid #138dde; /* Blue border on top */
+    border-right: 8px solid #138dde; /* Blue border on top */
+
+
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin-left: 45%;
+    margin-top: 20%;
+    display: none;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180de);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

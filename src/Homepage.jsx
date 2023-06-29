@@ -8,7 +8,7 @@ export function LoadHomepage() {
         document.getElementById('WelcomePage').style.display = 'none';
         document.getElementById('ShoppingPage').style.display = 'block';
   
-      },2000)
+      },1000)
   
     }
   
