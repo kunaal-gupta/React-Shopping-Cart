@@ -31,8 +31,8 @@ export function ReactShop() {
     totalPrice += element.Price * element.count;
 
   });
-  
-  let totalTax = 0.2*totalPrice;
+
+  let totalTax = 0.2 * totalPrice;
   let Total = totalPrice + totalTax;
 
 
@@ -89,16 +89,42 @@ export function ReactShop() {
         <p className="Heading-checkoutpage"> Review your Order</p>
         <hr />
         <p className="Items-checkoutpage"> Items:</p>
+        <div>
+
+          <table style={{border: '1px solid black'}}>
+            <thead>
+              <tr>
+                <th>Count</th>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                currProducts.map((element) =>{
+                if (element.count !=0) {
+                  return(
+                  <tr key={element.id}>
+                    <td>{element.count}</td>
+                    <td>{element.name}</td>
+                    <td>{element.Price}</td>
+                  </tr>
+                  )
+                }}
+                )}
+
+            </tbody>
+          </table>
+        </div>
         <hr />
 
-
-        <p className="billing-checkoutpage">
+        <div className="billing-checkoutpage">
           SubTotal: {totalPrice}  <br></br>
           Tax Rate:    20%       <br></br>
           Taxes:    {totalTax}    <br></br>
           Total:    {Total}       <br></br>
 
-        </p>
+        </div>
 
       </div>
     )
