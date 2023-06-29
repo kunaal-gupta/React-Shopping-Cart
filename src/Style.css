@@ -108,17 +108,23 @@
     font-weight: bold;
 }
 
-th, td{
+.BillFinancesHead{
+    text-align: right;
+    font-weight: bold;
+
+
+}
+
+.BillFinancesValue{
+    padding-left: 10%;
+}
+
+.table-Pcount{
+    /* background-color: rgb(34, 107, 107); */
     border: 1px solid black;
     font-family: Calibri;
     font-size: 150%;
     height: 1%;
-
-
-  }
-
-.table-Pcount{
-    /* background-color: rgb(34, 107, 107); */
     text-align: center;
     width: 15%;
     word-wrap: break-word;
@@ -126,6 +132,10 @@ th, td{
 
 }
 .table-Pname{
+    border: 1px solid black;
+    font-family: Calibri;
+    font-size: 150%;
+    height: 1%;
     width: 65%;
     word-wrap: break-word;
     padding-left: 20px;
@@ -133,6 +143,10 @@ th, td{
 
 }
 .table-Pprice{
+    border: 1px solid black;
+    font-family: Calibri;
+    font-size: 150%;
+    height: 1%;
     /* text-align: center; */
     word-wrap: break-word;
     width: 20%;
@@ -165,8 +179,9 @@ transform: scale(1.05);
 } 
 
 .billing-checkoutpage{
+    font-family: Calibri;
     margin-left: 70%;
-    font-size: 150%;
+    font-size: 130%;
     display: none;
 }
 

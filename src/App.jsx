@@ -89,11 +89,12 @@ export function ReactShop() {
     setTimeout(() => {
       document.getElementById('cloader').style.display = 'none';
       document.getElementById('billing-checkoutpage').style.display = 'block';
-    }, 2000
+    }, 500
     )
 
 
   }
+  let isCountZeroForallProducts = currProducts.every(items => items.count === 0)
 
   function LoadCheckoutPage() {
 
@@ -111,9 +112,9 @@ export function ReactShop() {
                 </tr>
               </thead>
               <tbody>
-                {
+                {              
                   currProducts.map((element) => {
-                    if (element.count != 0) {
+                            if (element.count != 0) {
                       return (
                         <tr key={element.id}>
                           <td className='table-Pcount'>  x{element.count}</td>
@@ -121,25 +122,26 @@ export function ReactShop() {
                           <td className='table-Pprice'>  ${element.Price}</td>
                         </tr>
                       )
-                    }
+                    } 
                   }
                   )}
 
               </tbody>
             </table>
-            <button id='Calc-checkoutpage' className='Calc-checkoutpage' onClick={CalculateBill}>Calculate </button>
+            <button id='Calc-checkoutpage' className='Calc-checkoutpage' onClick={CalculateBill}>Calculate My Bill </button>
           </div>
 
           <div className="billing-checkoutpage" id='billing-checkoutpage'>
+            <br /><hr />
+            <table style={{ fontSize: '100%' }}>
+              <tr> <td className='BillFinancesHead'> SubTotal:  </td> <td className='BillFinancesValue'>  ${totalPrice}   </td></tr>
+              <tr> <td className='BillFinancesHead'> Tax (20%): </td> <td className='BillFinancesValue'>  ${totalTax}     </td></tr>
+              <tr> <td className='BillFinancesHead'> Total:     </td> <td className='BillFinancesValue'>  ${Total}       </td></tr>
 
-            SubTotal: {totalPrice}  <br></br>
-            Tax Rate:    20%       <br></br>
-            Taxes:    {totalTax}    <br></br>
-            Total:    {Total}       <br></br>
+            </table>
+          </div >
 
-          </div>
-
-        </div>
+        </div >
         <div className='cloader' id='cloader'></div>
       </>
     )
