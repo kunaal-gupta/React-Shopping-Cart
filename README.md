@@ -1,5 +1,5 @@
 
-# React Shopping Cart
+# React Shopping Centre
 
 A shopping application developed using React & Vite which allows customer to add variety of products into their cart and provide a e-bill for lookup at checkout section.
 
@@ -9,7 +9,7 @@ A shopping application developed using React & Vite which allows customer to add
 Clone the project
 
 ```bash
-  git clone https://github.com/kunaal-gupta/React-Shopping-Cart.git
+  git clone https://github.com/kunaal-gupta/React-Shopping-Centre.git
 ```
 
 Install dependencies
