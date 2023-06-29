@@ -86,17 +86,15 @@ export function ReactShop() {
 
     return (
       <div className="CheckoutPage">
-        <p className="Heading-checkoutpage"> Review your Order</p>
-        <hr />
-        <p className="Items-checkoutpage"> Items:</p>
+        <div className="Heading-checkoutpage"> Review your Order</div><hr />
         <div>
 
-          <table style={{border: '1px solid black'}}>
+          <table style={{border: '1px solid black', width: '100%'}}>
             <thead>
-              <tr>
-                <th>Count</th>
-                <th>Name</th>
-                <th>Price</th>
+              <tr >
+                <th className='table-Pcount' style={{backgroundColor: 'rgb(230, 205, 205)'}}>Count</th>
+                <th className='table-Pname'  style={{backgroundColor: 'rgb(230, 205, 205)'}}>Name</th>
+                <th className='table-Pprice' style={{backgroundColor: 'rgb(230, 205, 205)'}}>Price</th>
               </tr>
             </thead>
             <tbody>
@@ -105,9 +103,9 @@ export function ReactShop() {
                 if (element.count !=0) {
                   return(
                   <tr key={element.id}>
-                    <td>{element.count}</td>
-                    <td>{element.name}</td>
-                    <td>{element.Price}</td>
+                    <td  className='table-Pcount'> X{element.count}</td>
+                    <td  className='table-Pname'>   {element.name} </td>
+                    <td  className='table-Pprice'>  ${element.Price}</td>
                   </tr>
                   )
                 }}
